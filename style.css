@@ -1,0 +1,267 @@
+body {
+
+  margin: 0;
+  padding: 0;
+
+  font-family: Arial, sans-serif;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+
+  color: white;
+
+  background: radial-gradient(circle at top, #1a1a1a, #0d0d0d 60%);
+}
+
+/* скрытие экранов */
+.hidden {
+  display: none;
+}
+
+/* 🎴 SKZ PHOTOCARD STYLE */
+#welcome-screen,
+#question-screen,
+#final-screen,
+#puzzle-screen,
+#win-screen {
+
+  text-align: center;
+  width: 700px;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 20px;
+
+  padding: 30px;
+
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+
+  backdrop-filter: blur(10px);
+
+  animation: fadeIn 0.4s ease;
+}
+
+#welcome-screen p {
+  font-size: 24px;
+  line-height: 1.8;
+  letter-spacing: 0.3px;
+}
+
+/* animation */
+@keyframes fadeIn {
+  from {
+    transform: scale(0.98);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* 🎤 TEXT */
+h1 {
+  font-size: 48px;
+}
+
+p {
+  color: #cccccc;
+  line-height: 1.6;
+}
+
+/* 🎯 QUESTION TEXT (УВЕЛИЧЕНО) */
+#question-text {
+  font-size: 34px;
+  line-height: 1.6;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+#question-number {
+  font-size: 18px;
+  color: #aaaaaa;
+  margin-bottom: 10px;
+}
+
+/* 🎴 ANSWERS */
+#answers-container {
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  margin-top: 20px;
+}
+
+.answer-button {
+
+  background: #1f1f1f;
+  color: white;
+
+  padding: 12px;
+
+  border-radius: 10px;
+
+  border: 2px solid transparent;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.answer-button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 10px rgba(255,255,255,0.12);
+}
+
+/* ✔ CORRECT / WRONG */
+.correct {
+  border: 2px solid #00ff7f !important;
+}
+
+.wrong {
+  border: 2px solid #ff4d4d !important;
+}
+
+/* 🎮 GENERAL BUTTONS */
+button {
+
+  padding: 14px 35px;
+  font-size: 18px;
+
+  border-radius: 10px;
+  border: none;
+
+  cursor: pointer;
+
+  margin-top: 10px;
+
+  transition: 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* 🎯 NEXT BUTTON */
+#next-btn {
+  background: white;
+  color: black;
+}
+
+/* 📱 INPUTS */
+input {
+
+  padding: 12px;
+  font-size: 18px;
+
+  border-radius: 8px;
+  border: none;
+
+  text-align: center;
+
+  margin: 5px;
+}
+
+/* 🟢 / 🔴 FINAL BUTTONS */
+.btn-success {
+  background: #00ff7f !important;
+  color: black !important;
+  border: 2px solid black !important;
+}
+
+.btn-fail {
+  background: #ff4d4d !important;
+  color: black !important;
+  border: 2px solid black !important;
+}
+
+/* 🟣 FINAL SCREEN TEXT (HAN) */
+#final-screen p {
+  font-size: 22px;
+}
+
+#final-screen input {
+  font-size: 20px;
+  padding: 14px;
+}
+
+#final-screen button {
+  font-size: 20px;
+  padding: 16px 40px;
+}
+
+/* 🐺 PUZZLE SCREEN (WOLF + CHAN) */
+#puzzle-screen h2 {
+  font-size: 36px;
+}
+
+#puzzle-screen p {
+  font-size: 20px;
+}
+
+#puzzle-screen input {
+  font-size: 20px;
+  padding: 14px;
+  width: 200px;
+}
+
+#puzzle-screen button {
+  font-size: 20px;
+  padding: 16px 40px;
+}
+
+/* 🏁 WIN SCREEN */
+#win-screen h1 {
+  font-size: 50px;
+}
+
+#question-text {
+  white-space: pre-line;
+}
+
+#letters-box {
+
+  margin-bottom: 25px;
+
+  background: rgba(255,255,255,0.05);
+
+  border: 1px solid rgba(255,255,255,0.1);
+
+  border-radius: 15px;
+
+  padding: 15px;
+}
+
+#letters-box p {
+  margin: 0;
+  margin-bottom: 10px;
+
+  color: #aaaaaa;
+
+  font-size: 16px;
+}
+
+#letters-container {
+
+  font-size: 32px;
+  font-weight: bold;
+
+  letter-spacing: 10px;
+
+  color: white;
+}
+
+#puzzle-screen h2 {
+
+  font-size: 30px;
+
+  line-height: 1.5;
+
+  margin-top: 25px;
+}

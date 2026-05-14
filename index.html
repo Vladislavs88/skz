@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- WELCOME SCREEN -->
+<div id="welcome-screen">
+
+  <h1>Just a small quiz about one K-pop group</h1>
+
+  <p>
+    Heeeeeeeeey! Foxy!<br><br>
+
+    Small quiz game about basic knowledge.
+    There is a REWARD at the end.<br><br>
+
+    Good luck!
+  </p>
+
+  <button id="start-button">START</button>
+
+</div>
+
+<!-- QUESTION SCREEN -->
+<div id="question-screen" class="hidden">
+
+  <h2 id="question-number"></h2>
+
+  <!-- LETTERS -->
+  <div id="letters-box">
+
+    <p>Collected letters</p>
+
+    <div id="letters-container">
+      _ _ _ _ _ _ _ _
+    </div>
+
+  </div>
+
+  <p id="question-text"></p>
+
+  <div id="answers-container"></div>
+
+  <button id="next-btn" class="hidden"></button>
+
+</div>
+
+<!-- HAN SCREEN -->
+<div id="final-screen" class="hidden">
+
+  <h2>Final Question</h2>
+
+  <!-- LETTERS -->
+  <div id="letters-box">
+
+    <p>Collected letters</p>
+
+    <div id="letters-container-final">
+      _ _ _ _ _ _ _ _
+    </div>
+
+  </div>
+
+  <p>
+    Who does the character Quokka from SKZOO represent?
+  </p>
+
+  <input id="final-input" placeholder="Type answer..." />
+
+  <button id="final-submit">Submit</button>
+
+  <button id="final-next" class="hidden"></button>
+
+</div>
+
+<!-- WOLF CHAN PUZZLE -->
+<div id="puzzle-screen" class="hidden">
+
+  <!-- LETTERS -->
+  <div id="letters-box">
+
+    <p>Collected letters</p>
+
+    <div id="letters-container-puzzle">
+      _ _ _ _ _ _ _ _
+    </div>
+
+  </div>
+
+  <h2>
+    During the quiz, letters were collected,
+    now write words from them
+  </h2>
+
+  <input id="input-1" placeholder="First word..." />
+  <input id="input-2" placeholder="Second word..." />
+
+  <button id="submit-puzzle">Submit</button>
+
+  <p id="attempts-text">
+    Attempts left: 3
+  </p>
+
+  <button id="restart-btn" class="hidden"></button>
+
+</div>
+
+<!-- WIN -->
+<div id="win-screen" class="hidden">
+
+  <h1>🎉 Congratulations!</h1>
+
+  <p>
+    You completed the quiz!
+  </p>
+
+  <p>
+    WOLF CHAN unlocked 🐺
+  </p>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
