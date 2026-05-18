@@ -430,11 +430,18 @@ input {
   }
 
   .wide-question .photo-card img {
-    width: 100%;
-    max-width: none;
-    height: 120px;
-    object-fit: cover;
-  }
+
+  width: 100%;
+
+  max-width: none;
+
+  height: 120px;
+}
+
+  .wide-question .photo-card {
+
+  padding: 6px;
+}
 
   .wide-question .photo-card span {
     font-size: 13px;
