@@ -23,15 +23,9 @@ const submitPuzzle = document.getElementById("submit-puzzle")
 const attemptsText = document.getElementById("attempts-text")
 const restartBtn = document.getElementById("restart-btn")
 
-/* LETTERS */
-const lettersContainer =
-  document.getElementById("letters-container")
-
-const lettersContainerFinal =
-  document.getElementById("letters-container-final")
-
-const lettersContainerPuzzle =
-  document.getElementById("letters-container-puzzle")
+const lettersContainer = document.getElementById("letters-container")
+const lettersContainerFinal = document.getElementById("letters-container-final")
+const lettersContainerPuzzle = document.getElementById("letters-container-puzzle")
 
 const collectedLetters = [
   "C",
@@ -50,40 +44,112 @@ let currentQuestion = 0
 let selected = false
 let attempts = 3
 
-/* QUESTIONS */
 const questions = [
 
   {
     text: `Which member was born in Yongin?`,
-    answers: ["Bang Chan","Felix","Hyunjin","Changbin"],
+    type: "photo",
+    answers: [
+      {
+        text: "Bang Chan",
+        image: "images/bangchan2.jpg"
+      },
+      {
+        text: "Felix",
+        image: "images/felix2.jpg"
+      },
+      {
+        text: "Hyunjin",
+        image: "images/hyunjin2.jpg"
+      },
+      {
+        text: "Changbin",
+        image: "images/changbin2.jpg"
+      }
+    ],
     correct: "Changbin"
   },
 
   {
-    text: `The album has its quirks. So don't be afraid of them even if the album has them.`,
-    answers: ["ODDINARY","ROCK-STAR","GO LIVE","THE SOUND"],
-    correct: "ODDINARY"
-  },
+  text: `The album has its quirks. So don't be afraid of them even if the album has them.`,
+  type: "photo",
+  answers: [
+    {
+      text: "ODDINARY",
+      image: "images/ODDINARY3.jpg"
+    },
+    {
+      text: "ROCK-STAR",
+      image: "images/ROCKSTAR3.jpg"
+    },
+    {
+      text: "GO LIVE",
+      image: "images/GOLIVE3.jpg"
+    },
+    {
+      text: "THE SOUND",
+      image: "images/THESOUND3.jpg"
+    }
+  ],
+  correct: "ODDINARY"
+},
 
   {
-    text: `Which Stray Kids member is part of the dance line and known for sharp performance style?`,
-    answers: [
-      "Seungmin",
-      "I.N",
-      "Lee Know",
-      "Changbin",
-      "Bang Chan",
-      "Hyunjin",
-      "Han",
-      "Felix"
-    ],
-    correct: "Lee Know"
-  },
+  text: `Which Stray Kids member is part of the dance line and known for sharp performance style?`,
+  type: "photo",
+  layout: "wide",
+
+  answers: [
+
+    {
+      text: "Seungmin",
+      image: "images/seungmin4.jpg"
+    },
+
+    {
+      text: "I.N",
+      image: "images/in4.jpg"
+    },
+
+    {
+      text: "Lee Know",
+      image: "images/leeknow4.jpg"
+    },
+
+    {
+      text: "Changbin",
+      image: "images/changbin4.jpg"
+    },
+
+    {
+      text: "Bang Chan",
+      image: "images/bangchan4.jpg"
+    },
+
+    {
+      text: "Hyunjin",
+      image: "images/hyunjin4.jpg"
+    },
+
+    {
+      text: "Han",
+      image: "images/han4.jpg"
+    },
+
+    {
+      text: "Felix",
+      image: "images/felix4.jpg"
+    }
+
+  ],
+  correct: "Lee Know"
+},
 
   {
     text: `Continue lyric:
 We're gonna go our way
 To places still unknown...`,
+    flip: true,
     answers: [
       "We're gonna show the way",
       "Come feel the rush, don't make a fuss",
@@ -96,44 +162,95 @@ To places still unknown...`,
   {
     text: `Find the incorrect option
 The album NOEASY includes songs such as-`,
-    answers: [
-      "The View",
-      "SSICK",
-      "DOMINO",
-      "Star Lost",
-      "Awaken",
-      "Red Lights",
-      "WOLFGANG",
-      "Silent Cry"
-    ],
-    correct: "Awaken"
-  },
+  type: "photo",
+  layout: "wide",
+  answers: [
+    {
+      text: "The View",
+      image: "images/theview.jpg"
+    },
+    {
+      text: "SSICK",
+      image: "images/ssick.jpg"
+    },
+    {
+      text: "DOMINO",
+      image: "images/domino.jpg"
+    },
+    {
+      text: "Star Lost",
+      image: "images/starlost.jpg"
+    },
+    {
+      text: "Awaken",
+      image: "images/awaken.jpg"
+    },
+    {
+      text: "Red Lights",
+      image: "images/redlights.jpg"
+    },
+    {
+      text: "WOLFGANG",
+      image: "images/wolfgang.jpg"
+    },
+    {
+      text: "Silent Cry",
+      image: "images/silentcry.jpg"
+    }
+  ],
+  correct: "Awaken"
+},
 
   {
-    text: `In which Japanese city did Stray Kids start perform 5-Star dome concerts?`,
-    answers: [
-      "Kyoto",
-      "Tokyo",
-      "Fukuoka",
-      "Osaka"
-    ],
-    correct: "Fukuoka"
-  },
+  text: `In which Japanese city did Stray Kids start perform 5-Star dome concerts?`,
+  type: "photo",
+  answers: [
+    {
+      text: "Kyoto",
+      image: "images/kyoto.jpg"
+    },
+    {
+      text: "Tokyo",
+      image: "images/tokyo.jpg"
+    },
+    {
+      text: "Fukuoka",
+      image: "images/fukuoka.jpg"
+    },
+    {
+      text: "Osaka",
+      image: "images/osaka.jpg"
+    }
+  ],
+  correct: "Fukuoka"
+},
 
   {
-    text: `Which word best describes Stray Kids storytelling style in music videos?`,
-    answers: [
-      "Linear",
-      "Predictable",
-      "Simple",
-      "Nonlinear"
-    ],
-    correct: "Nonlinear"
-  }
+  text: `Which word best describes Stray Kids storytelling style in music videos?`,
+  type: "photo",
+  answers: [
+    {
+      text: "Linear",
+      image: "images/linear.jpg"
+    },
+    {
+      text: "Predictable",
+      image: "images/predictable.jpg"
+    },
+    {
+      text: "Simple",
+      image: "images/simple.jpg"
+    },
+    {
+      text: "Nonlinear",
+      image: "images/nonlinear.jpg"
+    }
+  ],
+  correct: "Nonlinear"
+}
 
 ]
 
-/* LETTER UPDATE */
 function updateLetters() {
 
   let display = ""
@@ -163,7 +280,6 @@ function updateLetters() {
   }
 }
 
-/* START */
 startButton.onclick = () => {
 
   welcomeScreen.classList.add("hidden")
@@ -175,7 +291,6 @@ startButton.onclick = () => {
   loadQuestion()
 }
 
-/* LOAD QUESTION */
 function loadQuestion() {
 
   selected = false
@@ -188,6 +303,11 @@ function loadQuestion() {
   )
 
   const q = questions[currentQuestion]
+  questionScreen.classList.remove("wide-question")
+
+if (q.layout === "wide") {
+  questionScreen.classList.add("wide-question")
+}
 
   questionNumber.textContent =
     `Question ${currentQuestion + 1} / ${questions.length}`
@@ -196,78 +316,138 @@ function loadQuestion() {
 
   answersContainer.innerHTML = ""
 
-  q.answers.forEach(answer => {
+q.answers.forEach(answer => {
 
-    const btn = document.createElement("button")
+  const btn = document.createElement("button")
 
-    btn.classList.add("answer-button")
+  btn.classList.add("answer-button")
+
+  let answerText = ""
+
+  if (q.type === "photo") {
+
+    answerText = answer.text
+
+    btn.classList.add("photo-card")
+
+    btn.innerHTML = `
+      <img src="${answer.image}" alt="${answer.text}">
+      <span>${answer.text}</span>
+    `
+
+  } else if (q.flip === true) {
+
+    answerText = answer
+
+    btn.classList.add("flip-card")
+
+    btn.innerHTML = `
+      <div class="flip-inner">
+        <div class="flip-front">
+          ${answer}
+        </div>
+        <div class="flip-back"></div>
+      </div>
+    `
+
+  } else {
+
+    answerText = answer
 
     btn.textContent = answer
+  }
 
-    btn.onclick = () => {
+  btn.onclick = () => {
 
-      if (selected) return
+    if (selected) return
 
-      selected = true
+    selected = true
 
-      const correct = answer === q.correct
+    const correct = answerText === q.correct
+
+    if (q.flip === true) {
+
+      const backSide = btn.querySelector(".flip-back")
 
       if (correct) {
 
-        btn.classList.add("correct")
+        backSide.textContent = "Correct, go next"
+        backSide.classList.add("correct-back")
 
         unlockedLetters.push(true)
-
         updateLetters()
 
-        nextBtn.textContent =
-          "Correct, go next"
-
-        nextBtn.classList.add("btn-success")
-
-      } else {
-
-        btn.classList.add("wrong")
-
-        nextBtn.textContent =
-          "Wrong, restart"
-
-        nextBtn.classList.add("btn-fail")
-      }
-
-      nextBtn.classList.remove("hidden")
-
-      nextBtn.onclick = () => {
-
-        if (correct) {
-
+        btn.onclick = () => {
           currentQuestion++
 
           if (currentQuestion < questions.length) {
-
             loadQuestion()
-
           } else {
-
             questionScreen.classList.add("hidden")
-
             finalScreen.classList.remove("hidden")
-
             updateLetters()
           }
+        }
 
-        } else {
+      } else {
 
+        backSide.textContent = "Wrong, restart"
+        backSide.classList.add("wrong-back")
+
+        btn.onclick = () => {
           location.reload()
         }
       }
+
+      btn.classList.add("flipped")
+
+      return
     }
 
-    answersContainer.appendChild(btn)
-  })
+    if (correct) {
+
+      btn.classList.add("correct")
+
+      unlockedLetters.push(true)
+      updateLetters()
+
+      nextBtn.textContent = "Correct, go next"
+      nextBtn.classList.add("btn-success")
+
+    } else {
+
+      btn.classList.add("wrong")
+
+      nextBtn.textContent = "Wrong, restart"
+      nextBtn.classList.add("btn-fail")
+    }
+
+    nextBtn.classList.remove("hidden")
+
+    nextBtn.onclick = () => {
+
+      if (correct) {
+
+        currentQuestion++
+
+        if (currentQuestion < questions.length) {
+          loadQuestion()
+        } else {
+          questionScreen.classList.add("hidden")
+          finalScreen.classList.remove("hidden")
+          updateLetters()
+        }
+
+      } else {
+        location.reload()
+      }
+    }
+  }
+
+  answersContainer.appendChild(btn)
+})
 }
 
-/* HAN QUESTION */
 finalSubmit.onclick = () => {
 
   const value =
@@ -314,7 +494,6 @@ finalSubmit.onclick = () => {
   }
 }
 
-/* WOLF CHAN PUZZLE */
 submitPuzzle.onclick = () => {
 
   const v1 =
