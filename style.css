@@ -306,62 +306,116 @@ input {
 
 @media (max-width: 768px) {
 
+  html,
+  body {
+    min-height: 100%;
+  }
+
+  body {
+    min-height: 100vh;
+    height: auto;
+
+    align-items: flex-start;
+
+    padding: 20px 0;
+
+    background-image: linear-gradient(
+        rgba(0,0,0,0.45),
+        rgba(0,0,0,0.45)
+      ),
+      url("./images/welcome-bg.jpg");
+
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+  }
+
+  body::before {
+    display: none;
+  }
+
   #welcome-screen,
   #question-screen,
   #final-screen,
   #puzzle-screen,
   #win-screen {
-
-    width: 90%;
-
-    padding: 20px;
-  }
-
-  #question-text {
-    font-size: 22px;
+    width: 92%;
+    max-width: 420px;
+    padding: 18px;
+    box-sizing: border-box;
   }
 
   h1 {
-    font-size: 32px;
+    font-size: 28px;
   }
 
-  button {
+  #welcome-screen p {
+    font-size: 17px;
+    line-height: 1.5;
+  }
 
+  #question-text {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  #answers-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .photo-card {
+    max-width: none;
     width: 100%;
-
-    font-size: 18px;
-  }
-
-  .answer-button {
-
-    font-size: 16px;
-
-    padding: 12px;
+    padding: 8px;
+    box-sizing: border-box;
   }
 
   .photo-card img {
+    width: 100%;
+    max-width: none;
+    height: 150px;
+    object-fit: cover;
+  }
 
-    max-width: 140px;
+  .photo-card span {
+    font-size: 14px;
+  }
 
-    height: 180px;
+  .wide-question {
+    width: 92% !important;
+    max-width: 420px !important;
+  }
+
+  .wide-question #answers-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .wide-question .photo-card {
+    max-width: none;
+  }
+
+  .wide-question .photo-card img {
+    width: 100%;
+    max-width: none;
+    height: 135px;
   }
 
   #letters-container,
   #letters-container-final,
   #letters-container-puzzle {
-
-    font-size: 24px;
-
-    letter-spacing: 6px;
+    font-size: 22px;
+    letter-spacing: 5px;
   }
 
+  button,
   input {
-
     width: 100%;
-
-    font-size: 18px;
+    box-sizing: border-box;
   }
-
+}
   /* 📱 wide question mobile */
   .wide-question {
 
