@@ -385,75 +385,61 @@ input {
   }
 
   .wide-question {
+  width: 900px !important;
+  max-width: 95vw;
+}
+
+.wide-question #answers-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.wide-question .photo-card {
+  max-width: 125px;
+  padding: 8px;
+}
+
+.wide-question .photo-card img {
+  width: 100%;
+  max-width: 115px;
+  height: 145px;
+  object-fit: cover;
+}
+
+.wide-question .photo-card span {
+  font-size: 14px;
+}
+
+/* 📱 WIDE QUESTION MOBILE */
+@media (max-width: 768px) {
+
+  .wide-question {
     width: 92% !important;
     max-width: 420px !important;
   }
 
   .wide-question #answers-container {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
   }
 
   .wide-question .photo-card {
     max-width: none;
+    padding: 6px;
   }
 
   .wide-question .photo-card img {
     width: 100%;
     max-width: none;
-    height: 135px;
+    height: 120px;
+    object-fit: cover;
   }
 
-  #letters-container,
-  #letters-container-final,
-  #letters-container-puzzle {
-    font-size: 22px;
-    letter-spacing: 5px;
-  }
-
-  button,
-  input {
-    width: 100%;
-    box-sizing: border-box;
+  .wide-question .photo-card span {
+    font-size: 13px;
   }
 }
-  /* 📱 wide question mobile */
-  .wide-question {
-
-    width: 90% !important;
-  }
-
-  .wide-question #answers-container {
-
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .wide-question .photo-card img {
-
-    max-width: 130px;
-
-    height: 165px;
-  }
-}
-
-.wide-question {
-  width: 1000px !important;
-}
-
-.wide-question #answers-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
-}
-
-.wide-question .photo-card img {
-  max-width: 150px;
-  height: 190px;
-}
-
-.wide-question .photo-card span {
-  font-size: 16px;
-}
-
 q.answers.forEach(answer => {
 
   const btn = document.createElement("button")
