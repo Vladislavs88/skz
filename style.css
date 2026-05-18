@@ -9,30 +9,6 @@ body {
   justify-content: center;
   align-items: center;
 
-  height: 100vh;
-
-  color: white;
-
-  background-image: url("images/1.jpg");
-
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-
-  position: relative;
-}
-
-body {
-
-  margin: 0;
-  padding: 0;
-
-  font-family: Arial, sans-serif;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
   min-height: 100vh;
   height: auto;
 
@@ -47,6 +23,25 @@ body {
   overflow-x: hidden;
 
   position: relative;
+}
+
+body::before {
+
+  content: "";
+
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0,0,0,0.2);
+
+  z-index: -1;
+
+  pointer-events: none;
 }
 
 .hidden {
