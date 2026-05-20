@@ -3,6 +3,7 @@ html {
 }
 
 body {
+
   margin: 0;
   padding: 0;
 
@@ -12,11 +13,11 @@ body {
   justify-content: center;
   align-items: center;
 
-  min-height: 100vh;
+  min-height: 100dvh;
 
   color: white;
 
-  background-image: 
+  background-image:
     linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
     url("images/start.jpg");
 
@@ -24,9 +25,10 @@ body {
   background-position: center;
   background-repeat: no-repeat;
 
+  background-attachment: scroll;
+
   overflow-x: hidden;
 }
-
 .hidden {
   display: none;
 }
