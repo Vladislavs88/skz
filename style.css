@@ -1,5 +1,4 @@
 body {
-
   margin: 0;
   padding: 0;
 
@@ -9,21 +8,22 @@ body {
   justify-content: center;
   align-items: center;
 
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
 
   color: white;
 
-  background-image: url("images/1.jpg");
-
+  background-image: url("./images/welcome-bg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 
+  overflow-x: hidden;
   position: relative;
 }
 
 body::before {
-
   content: "";
 
   position: fixed;
@@ -48,14 +48,14 @@ body::before {
 #final-screen,
 #puzzle-screen,
 #win-screen {
-
   text-align: center;
+
   width: 700px;
+  max-width: 90vw;
 
   background: rgba(255, 255, 255, 0.05);
 
   border: 1px solid rgba(255, 255, 255, 0.12);
-
   border-radius: 20px;
 
   padding: 30px;
@@ -68,16 +68,12 @@ body::before {
 }
 
 #welcome-screen p {
-
   font-size: 24px;
-
   line-height: 1.8;
-
   letter-spacing: 0.3px;
 }
 
 @keyframes fadeIn {
-
   from {
     transform: scale(0.98);
     opacity: 0;
@@ -99,40 +95,30 @@ p {
 }
 
 #question-text {
-
   font-size: 34px;
-
   line-height: 1.6;
-
   font-weight: 500;
 }
 
 #question-number {
-
   font-size: 18px;
-
   color: #aaaaaa;
-
   margin-bottom: 10px;
 }
 
 #letters-box {
-
   margin-bottom: 25px;
 
   background: rgba(255,255,255,0.05);
 
   border: 1px solid rgba(255,255,255,0.1);
-
   border-radius: 15px;
 
   padding: 15px;
 }
 
 #letters-box p {
-
   margin: 0;
-
   margin-bottom: 10px;
 
   color: #aaaaaa;
@@ -143,9 +129,7 @@ p {
 #letters-container,
 #letters-container-final,
 #letters-container-puzzle {
-
   font-size: 32px;
-
   font-weight: bold;
 
   letter-spacing: 10px;
@@ -154,18 +138,15 @@ p {
 }
 
 #answers-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 10px;
+  gap: 14px;
 
   margin-top: 20px;
 }
 
 .answer-button {
-
   background: #1f1f1f;
 
   color: white;
@@ -173,7 +154,6 @@ p {
   padding: 14px;
 
   border-radius: 10px;
-
   border: 2px solid transparent;
 
   cursor: pointer;
@@ -184,13 +164,17 @@ p {
 }
 
 .answer-button:hover {
-
   transform: scale(1.03);
 
   box-shadow: 0 0 10px rgba(255,255,255,0.12);
 }
 
 .photo-card {
+  width: 100%;
+  max-width: 190px;
+
+  margin: 0 auto;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -200,16 +184,17 @@ p {
   padding: 12px;
 
   border-radius: 16px;
-
   border: 2px solid transparent;
 }
 
 .photo-card img {
   width: 100%;
-  max-width: 180px;
-  height: 230px;
+  max-width: 170px;
+
+  height: 220px;
 
   object-fit: cover;
+  display: block;
 
   border-radius: 14px;
 
@@ -221,14 +206,37 @@ p {
   font-weight: bold;
 }
 
-button {
+.wide-question {
+  width: 1000px !important;
+  max-width: 95vw;
+}
 
+.wide-question #answers-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 14px;
+}
+
+.wide-question .photo-card {
+  max-width: 160px;
+}
+
+.wide-question .photo-card img {
+  max-width: 145px;
+  height: 180px;
+}
+
+.wide-question .photo-card span {
+  font-size: 16px;
+}
+
+button {
   padding: 14px 35px;
 
   font-size: 20px;
 
   border-radius: 10px;
-
   border: none;
 
   cursor: pointer;
@@ -243,13 +251,11 @@ button:hover {
 }
 
 input {
-
   padding: 14px;
 
   font-size: 20px;
 
   border-radius: 8px;
-
   border: none;
 
   text-align: center;
@@ -266,7 +272,6 @@ input {
 }
 
 .btn-success {
-
   background: #00ff7f !important;
 
   color: black !important;
@@ -275,7 +280,6 @@ input {
 }
 
 .btn-fail {
-
   background: #ff4d4d !important;
 
   color: black !important;
@@ -285,266 +289,39 @@ input {
 
 #final-screen p,
 #puzzle-screen p {
-
   font-size: 22px;
 }
 
 #final-screen h2,
 #puzzle-screen h2 {
-
   font-size: 34px;
-
   line-height: 1.5;
 }
 
-@media (min-width: 600px) {
-  #answers-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-
-  #welcome-screen,
-  #question-screen,
-  #final-screen,
-  #puzzle-screen,
-  #win-screen {
-
-    width: 90%;
-
-    padding: 20px;
-  }
-
-  #question-text {
-    font-size: 22px;
-  }
-
-  h1 {
-    font-size: 32px;
-  }
-
-  button {
-
-    width: 100%;
-
-    font-size: 18px;
-  }
-
-  .answer-button {
-
-    font-size: 16px;
-
-    padding: 12px;
-  }
-
-  .photo-card img {
-
-    max-width: 140px;
-
-    height: 180px;
-  }
-
-  #letters-container,
-  #letters-container-final,
-  #letters-container-puzzle {
-
-    font-size: 24px;
-
-    letter-spacing: 6px;
-  }
-
-  input {
-
-    width: 100%;
-
-    font-size: 18px;
-  }
-
-  /* 📱 wide question mobile */
-  .wide-question {
-
-    width: 90% !important;
-  }
-
-  .wide-question #answers-container {
-
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .wide-question .photo-card img {
-
-    max-width: 130px;
-
-    height: 165px;
-  }
-}
-
-.wide-question {
-  width: 1000px !important;
-}
-
-.wide-question #answers-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
-}
-
-.wide-question .photo-card img {
-  max-width: 150px;
-  height: 190px;
-}
-
-.wide-question .photo-card span {
-  font-size: 16px;
-}
-
-q.answers.forEach(answer => {
-
-  const btn = document.createElement("button")
-
-  btn.classList.add("answer-button")
-
-  let answerText = ""
-
-  if (q.type === "photo") {
-
-    answerText = answer.text
-
-    btn.classList.add("photo-card")
-
-    btn.innerHTML = `
-      <img src="${answer.image}" alt="${answer.text}">
-      <span>${answer.text}</span>
-    `
-
-  } else if (q.flip === true) {
-
-    answerText = answer
-
-    btn.classList.add("flip-card")
-
-    btn.innerHTML = `
-      <div class="flip-inner">
-        <div class="flip-front">
-          ${answer}
-        </div>
-        <div class="flip-back"></div>
-      </div>
-    `
-
-  } else {
-
-    answerText = answer
-
-    btn.textContent = answer
-  }
-
-  btn.onclick = () => {
-
-    if (selected) return
-
-    selected = true
-
-    const correct = answerText === q.correct
-
-    if (q.flip === true) {
-
-      const backSide = btn.querySelector(".flip-back")
-
-      if (correct) {
-
-        backSide.textContent = "Correct, go next"
-        backSide.classList.add("correct-back")
-
-        unlockedLetters.push(true)
-        updateLetters()
-
-        btn.onclick = () => {
-          currentQuestion++
-
-          if (currentQuestion < questions.length) {
-            loadQuestion()
-          } else {
-            questionScreen.classList.add("hidden")
-            finalScreen.classList.remove("hidden")
-            updateLetters()
-          }
-        }
-
-      } else {
-
-        backSide.textContent = "Wrong, restart"
-        backSide.classList.add("wrong-back")
-
-        btn.onclick = () => {
-          location.reload()
-        }
-      }
-
-      btn.classList.add("flipped")
-
-      return
-    }
-
-    if (correct) {
-
-      btn.classList.add("correct")
-
-      unlockedLetters.push(true)
-      updateLetters()
-
-      nextBtn.textContent = "Correct, go next"
-      nextBtn.classList.add("btn-success")
-
-    } else {
-
-      btn.classList.add("wrong")
-
-      nextBtn.textContent = "Wrong, restart"
-      nextBtn.classList.add("btn-fail")
-    }
-
-    nextBtn.classList.remove("hidden")
-
-    nextBtn.onclick = () => {
-
-      if (correct) {
-
-        currentQuestion++
-
-        if (currentQuestion < questions.length) {
-          loadQuestion()
-        } else {
-          questionScreen.classList.add("hidden")
-          finalScreen.classList.remove("hidden")
-          updateLetters()
-        }
-
-      } else {
-        location.reload()
-      }
-    }
-  }
-
-  answersContainer.appendChild(btn)
-})
+/* FLIP CARD */
 
 .flip-card {
   position: relative;
+
   min-height: 90px;
+
   perspective: 1000px;
+
   background: transparent !important;
+
   padding: 0 !important;
+
   border: none !important;
 }
 
 .flip-inner {
   position: relative;
+
   width: 100%;
   min-height: 90px;
+
   transition: transform 0.6s;
+
   transform-style: preserve-3d;
 }
 
@@ -555,6 +332,7 @@ q.answers.forEach(answer => {
 .flip-front,
 .flip-back {
   position: absolute;
+
   width: 100%;
   min-height: 90px;
 
@@ -563,22 +341,29 @@ q.answers.forEach(answer => {
   align-items: center;
 
   border-radius: 10px;
+
   backface-visibility: hidden;
 
   padding: 14px;
+
   box-sizing: border-box;
 }
 
 .flip-front {
   background: #1f1f1f;
+
   color: white;
+
   border: 2px solid transparent;
 }
 
 .flip-back {
   transform: rotateY(180deg);
+
   color: black;
+
   border: 2px solid black;
+
   font-weight: bold;
 }
 
@@ -588,4 +373,104 @@ q.answers.forEach(answer => {
 
 .flip-back.wrong-back {
   background: #ff4d4d;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  body {
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center;
+  }
+
+  #welcome-screen,
+  #question-screen,
+  #final-screen,
+  #puzzle-screen,
+  #win-screen {
+    width: 90%;
+    max-width: 90vw;
+
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  #welcome-screen p {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  #question-text {
+    font-size: 22px;
+  }
+
+  #answers-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  button {
+    width: 100%;
+
+    font-size: 18px;
+  }
+
+  .answer-button {
+    font-size: 16px;
+
+    padding: 12px;
+  }
+
+  .photo-card {
+    max-width: 145px;
+
+    padding: 8px;
+  }
+
+  .photo-card img {
+    max-width: 130px;
+
+    height: 165px;
+  }
+
+  .photo-card span {
+    font-size: 15px;
+  }
+
+  .wide-question {
+    width: 90% !important;
+  }
+
+  .wide-question #answers-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .wide-question .photo-card {
+    max-width: 140px;
+  }
+
+  .wide-question .photo-card img {
+    max-width: 125px;
+
+    height: 155px;
+  }
+
+  #letters-container,
+  #letters-container-final,
+  #letters-container-puzzle {
+    font-size: 24px;
+
+    letter-spacing: 6px;
+  }
+
+  input {
+    width: 100%;
+
+    font-size: 18px;
+  }
 }
