@@ -1,8 +1,17 @@
+/* GLOBAL */
+
+* {
+  box-sizing: border-box;
+}
+
 html {
+
   min-height: 100%;
 
   background: black;
 }
+
+/* BODY */
 
 body {
 
@@ -19,7 +28,7 @@ body {
 
   color: white;
 
-  background-image:
+  background:
     linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
     url("images/start.jpg");
 
@@ -27,19 +36,23 @@ body {
   background-position: center;
   background-repeat: no-repeat;
 
-  background-attachment: scroll;
-
   overflow-x: hidden;
 }
+
+/* HIDDEN */
+
 .hidden {
   display: none;
 }
+
+/* MAIN CARDS */
 
 #welcome-screen,
 #question-screen,
 #final-screen,
 #puzzle-screen,
 #win-screen {
+
   text-align: center;
 
   width: 700px;
@@ -48,6 +61,7 @@ body {
   background: rgba(255, 255, 255, 0.05);
 
   border: 1px solid rgba(255, 255, 255, 0.12);
+
   border-radius: 20px;
 
   padding: 30px;
@@ -59,13 +73,21 @@ body {
   animation: fadeIn 0.4s ease;
 }
 
+/* WELCOME */
+
 #welcome-screen p {
+
   font-size: 24px;
+
   line-height: 1.8;
+
   letter-spacing: 0.3px;
 }
 
+/* ANIMATION */
+
 @keyframes fadeIn {
+
   from {
     transform: scale(0.98);
     opacity: 0;
@@ -77,40 +99,58 @@ body {
   }
 }
 
+/* TITLES */
+
 h1 {
   font-size: 48px;
 }
 
 p {
+
   color: #cccccc;
+
   line-height: 1.6;
 }
 
+/* QUESTION */
+
 #question-text {
+
   font-size: 34px;
+
   line-height: 1.6;
+
   font-weight: 500;
 }
 
 #question-number {
+
   font-size: 18px;
+
   color: #aaaaaa;
+
   margin-bottom: 10px;
 }
 
+/* LETTER BOX */
+
 #letters-box {
+
   margin-bottom: 25px;
 
   background: rgba(255,255,255,0.05);
 
   border: 1px solid rgba(255,255,255,0.1);
+
   border-radius: 15px;
 
   padding: 15px;
 }
 
 #letters-box p {
+
   margin: 0;
+
   margin-bottom: 10px;
 
   color: #aaaaaa;
@@ -118,10 +158,14 @@ p {
   font-size: 16px;
 }
 
+/* LETTERS */
+
 #letters-container,
 #letters-container-final,
 #letters-container-puzzle {
+
   font-size: 32px;
+
   font-weight: bold;
 
   letter-spacing: 10px;
@@ -129,8 +173,12 @@ p {
   color: white;
 }
 
+/* ANSWERS */
+
 #answers-container {
+
   display: grid;
+
   grid-template-columns: repeat(2, 1fr);
 
   gap: 14px;
@@ -138,7 +186,10 @@ p {
   margin-top: 20px;
 }
 
+/* BUTTONS */
+
 .answer-button {
+
   background: #1f1f1f;
 
   color: white;
@@ -146,6 +197,7 @@ p {
   padding: 14px;
 
   border-radius: 10px;
+
   border: 2px solid transparent;
 
   cursor: pointer;
@@ -156,12 +208,16 @@ p {
 }
 
 .answer-button:hover {
+
   transform: scale(1.03);
 
   box-shadow: 0 0 10px rgba(255,255,255,0.12);
 }
 
+/* PHOTO CARDS */
+
 .photo-card {
+
   width: 100%;
   max-width: 190px;
 
@@ -176,16 +232,19 @@ p {
   padding: 12px;
 
   border-radius: 16px;
+
   border: 2px solid transparent;
 }
 
 .photo-card img {
+
   width: 100%;
   max-width: 170px;
 
   height: 220px;
 
   object-fit: cover;
+
   display: block;
 
   border-radius: 14px;
@@ -194,41 +253,57 @@ p {
 }
 
 .photo-card span {
+
   font-size: 18px;
+
   font-weight: bold;
 }
 
+/* WIDE QUESTIONS */
+
 .wide-question {
+
   width: 1000px !important;
+
   max-width: 95vw;
 }
 
 .wide-question #answers-container {
+
   display: grid;
+
   grid-template-columns: repeat(4, 1fr);
 
   gap: 14px;
 }
 
 .wide-question .photo-card {
+
   max-width: 160px;
 }
 
 .wide-question .photo-card img {
+
   max-width: 145px;
+
   height: 180px;
 }
 
 .wide-question .photo-card span {
+
   font-size: 16px;
 }
 
+/* GENERAL BUTTON */
+
 button {
+
   padding: 14px 35px;
 
   font-size: 20px;
 
   border-radius: 10px;
+
   border: none;
 
   cursor: pointer;
@@ -239,15 +314,20 @@ button {
 }
 
 button:hover {
+
   transform: scale(1.05);
 }
 
+/* INPUT */
+
 input {
+
   padding: 14px;
 
   font-size: 20px;
 
   border-radius: 8px;
+
   border: none;
 
   text-align: center;
@@ -255,15 +335,24 @@ input {
   margin: 5px;
 }
 
+/* CORRECT */
+
 .correct {
+
   border: 2px solid #00ff7f !important;
 }
 
+/* WRONG */
+
 .wrong {
+
   border: 2px solid #ff4d4d !important;
 }
 
+/* SUCCESS BUTTON */
+
 .btn-success {
+
   background: #00ff7f !important;
 
   color: black !important;
@@ -271,7 +360,10 @@ input {
   border: 2px solid black !important;
 }
 
+/* FAIL BUTTON */
+
 .btn-fail {
+
   background: #ff4d4d !important;
 
   color: black !important;
@@ -279,20 +371,26 @@ input {
   border: 2px solid black !important;
 }
 
+/* FINAL SCREENS */
+
 #final-screen p,
 #puzzle-screen p {
+
   font-size: 22px;
 }
 
 #final-screen h2,
 #puzzle-screen h2 {
+
   font-size: 34px;
+
   line-height: 1.5;
 }
 
 /* FLIP CARD */
 
 .flip-card {
+
   position: relative;
 
   min-height: 90px;
@@ -307,6 +405,7 @@ input {
 }
 
 .flip-inner {
+
   position: relative;
 
   width: 100%;
@@ -318,11 +417,13 @@ input {
 }
 
 .flip-card.flipped .flip-inner {
+
   transform: rotateY(180deg);
 }
 
 .flip-front,
 .flip-back {
+
   position: absolute;
 
   width: 100%;
@@ -342,6 +443,7 @@ input {
 }
 
 .flip-front {
+
   background: #1f1f1f;
 
   color: white;
@@ -350,6 +452,7 @@ input {
 }
 
 .flip-back {
+
   transform: rotateY(180deg);
 
   color: black;
@@ -360,10 +463,12 @@ input {
 }
 
 .flip-back.correct-back {
+
   background: #00ff7f;
 }
 
 .flip-back.wrong-back {
+
   background: #ff4d4d;
 }
 
@@ -372,7 +477,14 @@ input {
 @media (max-width: 768px) {
 
   body {
-    background-attachment: scroll;
+
+    align-items: flex-start;
+
+    padding-top: 20px;
+    padding-bottom: 40px;
+
+    min-height: 100dvh;
+
     background-size: cover;
     background-position: center;
   }
@@ -382,6 +494,7 @@ input {
   #final-screen,
   #puzzle-screen,
   #win-screen {
+
     width: 90%;
     max-width: 90vw;
 
@@ -389,64 +502,79 @@ input {
   }
 
   h1 {
+
     font-size: 32px;
   }
 
   #welcome-screen p {
+
     font-size: 18px;
+
     line-height: 1.6;
   }
 
   #question-text {
+
     font-size: 22px;
   }
 
   #answers-container {
+
     grid-template-columns: repeat(2, 1fr);
+
     gap: 10px;
   }
 
   button {
+
     width: 100%;
 
     font-size: 18px;
   }
 
   .answer-button {
+
     font-size: 16px;
 
     padding: 12px;
   }
 
   .photo-card {
+
     max-width: 145px;
 
     padding: 8px;
   }
 
   .photo-card img {
+
     max-width: 130px;
 
     height: 165px;
   }
 
   .photo-card span {
+
     font-size: 15px;
   }
 
   .wide-question {
+
     width: 90% !important;
   }
 
   .wide-question #answers-container {
+
     grid-template-columns: repeat(2, 1fr);
   }
 
   .wide-question .photo-card {
+
     max-width: 140px;
   }
 
   .wide-question .photo-card img {
+
     max-width: 125px;
 
     height: 155px;
@@ -455,12 +583,14 @@ input {
   #letters-container,
   #letters-container-final,
   #letters-container-puzzle {
+
     font-size: 24px;
 
     letter-spacing: 6px;
   }
 
   input {
+
     width: 100%;
 
     font-size: 18px;
