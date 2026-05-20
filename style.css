@@ -1,3 +1,7 @@
+html {
+  min-height: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -9,34 +13,18 @@ body {
   align-items: center;
 
   min-height: 100vh;
-  height: auto;
 
   color: white;
 
-  background-image: url("./images/welcome-bg.jpg");
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url("images/welcome-bg.jpg");
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
 
   overflow-x: hidden;
-  position: relative;
-}
-
-body::before {
-  content: "";
-
-  position: fixed;
-
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 100%;
-
-  background: rgba(0,0,0,0.45);
-
-  z-index: -1;
 }
 
 .hidden {
